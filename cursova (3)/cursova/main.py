@@ -3,9 +3,12 @@ import json
 from student import Student, StudentGroup, StudentGrade, get_subject_factory
 from vizualization import Plot
 from typing import List
+import os
+
+
 
 app = Flask(__name__)
-app.secret_key = "123456789"
+app.secret_key = os.environ.get('FLASK_KEY')
 show_navbar = True
 
 data: List[Student] = [];
@@ -139,5 +142,5 @@ def upload_students():
     return render_template("uploads.html")
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=False)
 
