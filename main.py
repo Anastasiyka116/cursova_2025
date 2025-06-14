@@ -1,4 +1,4 @@
-'from flask import Flask, render_template, request, jsonify, redirect, url_for
+from flask import Flask, render_template, request, jsonify, redirect, url_for
 import json
 from student import Student, StudentGroup, StudentGrade, get_subject_factory
 from vizualization import Plot
